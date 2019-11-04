@@ -118,14 +118,17 @@ max-height: 300px;
 
 server <- function(input, output) {
   
+  # get the column block input
   output$dragula1 <- renderDragula({
     dragula(c("Available1", "colOutput"))
   })
   
+  # get the 'row' block inputs
   output$dragula2 <- renderDragula({
     dragula(c("Available2", "rowOutput"))
   })
   
+  # get the summarization functions the user want's to perform on data
   output$dragula3 <- renderDragula({
     dragula(c("Available3", "aggOutput"))
   })
@@ -142,9 +145,9 @@ server <- function(input, output) {
     } 
   })
   
-  rows <- reactive ({
-    input$dragula2
-  })
+#  rows <- reactive ({
+#    input$dragula2
+#  })
   
 #  agg_func <- reactive({
 #    af <- NULL
